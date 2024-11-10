@@ -1,0 +1,20 @@
+[
+    {
+        "nombre": "Laptop X200",
+        "descripcion": "Una laptop de alto rendimiento",
+        "precio": 1200.99,
+        "pathImg": "/images/productos/laptop-x200.jpg"
+    },
+    {
+        "nombre": "Laptoppppp",
+        "descripcion": "Una laptopppppp de alto rendimiento",
+        "precio": 100.97,
+        "pathImg": "/images/productos/laptoppppp.jpg"
+    },
+    {
+        "nombre": "Monitor Dell",
+        "descripcion": "Un monitor viejito pero funciona",
+        "precio": 40,
+        "pathImg": "/images/productos/monitor-del.jpg"
+    }
+]

@@ -1,0 +1,18 @@
+[
+    {
+        "nombre": "Pantalla OLED 6.5 pulgadas",
+        "descripcion": "Pantalla de alta definición"
+    },
+    {
+        "nombre": "Batería 4000mAh",
+        "descripcion": "Batería de larga duración"
+    },
+    {
+        "nombre": "Memoria RAM DDR4",
+        "descripcion": "Memoria Kingston con leds"
+    },
+    {
+        "nombre": "Disco M2 NVMe",
+        "descripcion": "Disco solido de alto rendimiento"
+    }
+]

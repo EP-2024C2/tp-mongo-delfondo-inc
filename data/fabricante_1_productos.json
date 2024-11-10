@@ -1,0 +1,47 @@
+{
+    "id": 1,
+    "nombre": "TechCorp",
+    "direccion": "1234 Elm St, Ciudad",
+    "contacto": "+123456789",
+    "pathImgPerfil": "/images/fabricantes/techcorp.jpg",
+    "productos": [
+        {
+            "id": 1,
+            "nombre": "Laptop X200",
+            "descripcion": "Una laptop de alto rendimiento",
+            "precio": 1200.99,
+            "pathImg": "/images/productos/laptop-x200.jpg",
+            "componentes": [
+                {
+                    "id": 1,
+                    "nombre": "Procesador Intel i7",
+                    "descripcion": "Procesador de octava generación"
+                },
+                {
+                    "id": 2,
+                    "nombre": "SSD 1TB",
+                    "descripcion": "Disco sólido de 1TB de capacidad"
+                }
+            ]
+        },
+        {
+            "id": 2,
+            "nombre": "Smartphone S5",
+            "descripcion": "Teléfono inteligente con pantalla OLED",
+            "precio": 799.99,
+            "pathImg": "/images/productos/smartphone-s5.jpg",
+            "componentes": [
+                {
+                    "id": 3,
+                    "nombre": "Pantalla OLED 6.5 pulgadas",
+                    "descripcion": "Pantalla de alta definición"
+                },
+                {
+                    "id": 4,
+                    "nombre": "Batería 4000mAh",
+                    "descripcion": "Batería de larga duración"
+                }
+            ]
+        }
+    ]
+}

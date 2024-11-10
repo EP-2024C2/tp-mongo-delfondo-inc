@@ -1,0 +1,23 @@
+{
+    "id": 1,
+    "nombre": "Laptop X200",
+    "descripcion": "Una laptop de alto rendimiento",
+    "precio": 1200.99,
+    "pathImg": "/images/productos/laptop-x200.jpg",
+    "fabricantes": [
+        {
+            "id": 1,
+            "nombre": "TechCorp",
+            "direccion": "1234 Elm St, Ciudad",
+            "contacto": "+123456789",
+            "pathImgPerfil": "/images/fabricantes/techcorp.jpg"
+        },
+        {
+            "id": 2,
+            "nombre": "Innovatech",
+            "direccion": "4567 Oak Ave, Ciudad",
+            "contacto": "+987654321",
+            "pathImgPerfil": "/images/fabricantes/innovatech.jpg"
+        }
+    ]
+}
