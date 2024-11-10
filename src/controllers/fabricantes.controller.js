@@ -1,4 +1,3 @@
-const { Model } = require('sequelize')
 const { Fabricante, Producto, Componente } = require('../models')
 const controller = {}
 controller.fabricantes = Fabricante
