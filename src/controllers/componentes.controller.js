@@ -3,7 +3,7 @@ const controller = {}
 controller.componentes = Componente
 
 const getAllParts = async (req, res)=>{
-    const componentes = await Componente.findAll({})
+    const componentes = await Componente.find({})
     res.status(200).json(componentes)
 }
 controller.getAllParts = getAllParts

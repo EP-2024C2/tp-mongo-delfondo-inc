@@ -3,7 +3,7 @@ const controller = {}
 controller.fabricantes = Fabricante
 
 const getAllMakers = async (req, res)=>{
-    const fabricantes = await Fabricante.findAll({})
+    const fabricantes = await Fabricante.find({})
     res.status(200).json(fabricantes)
 }
 controller.getAllMakers = getAllMakers

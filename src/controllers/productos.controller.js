@@ -3,7 +3,7 @@ const controller = {}
 controller.productos = Producto
 
 const getAllProducts = async (req, res)=>{
-    const productos = await Producto.findAll({})
+    const productos = await Producto.find({})
     res.status(200).json(productos)
 }
 controller.getAllProducts = getAllProducts
