@@ -10,9 +10,7 @@ controller.getAllProducts = getAllProducts
 
 const getProductById = async (req, res)=>{
     const id = req.params.id
-    const producto = await Producto.findOne({ 
-        where: {id},
-    })
+    const producto = await Producto.findById(id)
     res.status(200).json(producto)
 }
 controller.getProductById = getProductById
@@ -33,30 +31,23 @@ controller.createProduct = createProduct
 const updateProducto = async (req,res)=>{
     const id = req.params.id
     const { nombre,descripcion,precio,pathImg,fabricantes } = req.body
-    const producto = await Producto.findByPk(id)
-    producto.nombre = nombre
-    producto.descripcion = descripcion
-    producto.precio = precio
-    producto.pathImg = pathImg
-    producto.fabricantes = fabricantes
-    await producto.save()
+    const producto = await Producto.findOneAndUpdate({_id:id}, { nombre,descripcion,precio,pathImg,fabricantes }, {new: true})
     res.status(200).json(producto)
 }
 controller.updateProducto = updateProducto
 
 const deleteById = async (req,res)=>{
     const idBorrado = req.params.id
-    try{const row = await Producto.destroy({
-        where: {id:idBorrado}
-    })
-    res.status(200).json({mensaje: `fila borrada ${row}`})
-} catch{
-    res.status(500).json({message:'Error de borrado!'})
+    try{
+        await Producto.findOneAndDelete({_id:idBorrado})
+        res.status(200).json({mensaje: `El documento con id ${idBorrado} ha si eliminado exitosamente.`})
+    } catch(error) {
+        res.status(500).json({message:'Error de borrado!'})
     }
 }
 controller.deleteById = deleteById
 
-
+//Hasta deleteById funciona con mongo, faltan los que siguen.
 
 const productMaker = async (req, res)=>{
     const idProd = req.params.id // id producto

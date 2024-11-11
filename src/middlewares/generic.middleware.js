@@ -1,10 +1,11 @@
 const middleware = {}
 
-const validateId = (model) => { return async (req, res, next) => {
+const validateId = (model) => { 
+    return async (req, res, next) => {
         const id = req.params.id
-        await model.findByPk(id).then(result => {
+        await model.findById(id).then(result => {
             if(!result)
-                return res.status(400).json({message: `El ${model.name} con id ${id} no existe`})
+                return res.status(400).json({message: `El ${model.modelName} con id ${id} no existe`})
             next()
         })
     }
@@ -17,4 +18,4 @@ const requestTime = (req, _ , next) => {
 }
 middleware.requestTime = requestTime
 
-module.exports = middleware
+module.exports = middleware 
