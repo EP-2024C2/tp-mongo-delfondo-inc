@@ -3,6 +3,8 @@ const route = Router()
 const { componentesController } = require('../controllers/index')
 const { genericMiddleware } = require('../middlewares/index')
 const { Componente } = require('../models')
+const schemaValidator = require('../middlewares/schemaValidator')
+const componentesSchema= require('../schemas/componentes.schema')
 
 route.get('/componentes',componentesController.getAllParts)
 route.get('/componentes/:id',genericMiddleware.validateId(Componente),componentesController.getPartById)
