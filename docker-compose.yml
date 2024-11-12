@@ -17,7 +17,7 @@ services:
     environment:
       ME_CONFIG_MONGODB_ADMINUSERNAME: web
       ME_CONFIG_MONGODB_ADMINPASSWORD: web1234
-      ME_CONFIG_MONGODB_URL: mongodb://admin:admin1234@mongodb:27017/
+      ME_CONFIG_MONGODB_URL: mongodb://admin:admin1234@mongodb:27017/admin?serverSelectionTimeoutMS=1000000
       ME_CONFIG_BASICAUTH: "false"
     depends_on:
       - mongodb

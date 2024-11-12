@@ -40,7 +40,7 @@ const deleteById = async (req,res)=>{
     const idBorrado = req.params.id
     try{
         await Producto.findOneAndDelete({_id:idBorrado})
-        res.status(200).json({mensaje: `El documento con id ${idBorrado} ha si eliminado exitosamente.`})
+        res.status(200).json({mensaje: `El producto con id ${idBorrado} ha si eliminado exitosamente.`})
     } catch(error) {
         res.status(500).json({message:'Error de borrado!'})
     }
@@ -52,22 +52,24 @@ controller.deleteById = deleteById
 const productMaker = async (req, res)=>{
     const idProd = req.params.id // id producto
     const { id } = req.body // id de fabricante
-    const prod=await Producto.findByPk(idProd)
-    const fabricante=await Fabricante.findByPk(id)
-    await prod.addFabricante(fabricante)
+    const prod = await Producto.findById(idProd)
+    const fabricante = await Fabricante.findById(id)
+
+    if(!fabricante)
+        return res.status(404).json({mensaje: `El fabricante con id ${id} no existe`})
+
+    prod.fabricantes.push(fabricante._id)
+    fabricante.productos.push(prod._id)
+    prod.save()
+    fabricante.save()
+
     res.status(201).json(({mensaje: `Se ha asociado el fabricante con exito!`}))
-}   
+}    
 controller.productMaker = productMaker
 
 const getAllProductMaker= async (req, res)=>{
     const id = req.params.id
-    const prod = await Producto.findOne( {
-        where: {id},
-        include: {
-            model: Fabricante,
-            through: {attributes: []}
-        }
-    })
+    const prod = await Producto.findById(id).populate('fabricantes')
     res.status(200).json(prod)
 }
 controller.getAllProductMaker = getAllProductMaker
