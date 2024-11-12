@@ -40,17 +40,7 @@ controller.deleteById = deleteById
 
 const getAllProductsMade = async (req,res)=>{
     const id = req.params.id
-    const fabricante = await Fabricante.findOne( {
-        where: {id},
-        include: {
-            model: Producto,
-            through: {attributes: []},
-            include: {
-                model: Componente,
-                through: {attributes: []}
-            }
-        }
-    })
+    const fabricante = await Fabricante.findById(id).populate('productos')
     res.status(200).json(fabricante)
 }
 controller.getAllProductsMade = getAllProductsMade
