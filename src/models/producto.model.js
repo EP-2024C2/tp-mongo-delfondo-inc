@@ -35,6 +35,7 @@ const productoSchema = new mongoose.Schema({
     },
     pathImg: {
         type: Schema.Types.String,
+        required:true
     },
     fabricantes: [{
         type: Schema.Types.ObjectId,

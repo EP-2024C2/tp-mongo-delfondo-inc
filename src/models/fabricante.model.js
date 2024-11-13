@@ -16,6 +16,7 @@ const fabricanteSchema = new mongoose.Schema({
     },
     pathImgPerfil: {
         type: Schema.Types.String,
+        required:true
     },
     productos: [{
         type: Schema.Types.ObjectId,
