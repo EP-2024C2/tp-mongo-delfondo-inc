@@ -9,7 +9,7 @@ const productosSchema= require('../schemas/productos.schema')
 route.get('/productos',productosController.getAllProducts)
 route.get('/productos/:id',genericMiddleware.validateId(Producto),productosController.getProductById)
 
-route.post('/productos', productosController.createProduct)
+route.post('/productos',schemaValidator(productosSchema),productosController.createProduct)
 route.put('/productos/:id', genericMiddleware.validateId(Producto),productosController.updateProducto)
 route.delete('/productos/:id',genericMiddleware.validateId(Producto),productosController.deleteById) 
 

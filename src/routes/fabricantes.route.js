@@ -9,7 +9,7 @@ const fabricantesSchema= require('../schemas/fabricante.schema')
 route.get('/fabricantes',fabricantesController.getAllMakers)
 route.get('/fabricantes/:id',genericMiddleware.validateId(Fabricante),fabricantesController.getMakerById)
 
-route.post('/fabricantes',fabricantesController.createMaker)
+route.post('/fabricantes',schemaValidator(fabricantesSchema),fabricantesController.createMaker)
 route.put('/fabricantes/:id',genericMiddleware.validateId(Fabricante),fabricantesController.updateMaker)
 route.delete('/fabricantes/:id',genericMiddleware.validateId(Fabricante),fabricantesController.deleteById)
 
