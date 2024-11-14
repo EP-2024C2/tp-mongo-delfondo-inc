@@ -1,6 +1,7 @@
 const { Componente, Producto } = require('../models')
 const controller = {}
 controller.componentes = Componente
+const mongoose = require("../db/mongo.db").mongoose;
 
 const getAllParts = async (req, res)=>{
     const componentes = await Componente.find({})

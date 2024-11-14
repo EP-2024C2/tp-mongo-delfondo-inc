@@ -18,10 +18,13 @@ const fabricanteSchema = new mongoose.Schema({
         type: Schema.Types.String,
         required:true
     },
-    productos: [{
+    productosId: [{
         type: Schema.Types.ObjectId,
         ref: 'Producto'
     }]
+},
+{
+  collection: "fabricantes",
 })
 
 fabricanteSchema.set("toJSON", {
