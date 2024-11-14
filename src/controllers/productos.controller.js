@@ -57,6 +57,10 @@ const productMaker = async (req, res)=>{
     const fabricante = await Fabricante.findById(id)
     if(!fabricante)
         return res.status(404).json({mensaje: `El fabricante con id ${id} no existe`})
+    const existe=fabricante.productosId.find(id=>id._id=idProd)
+    if(existe){
+        return res.status(409).json({mensaje: `El producto con id ${idProd} ya ha sido asociado con anterioridad`})
+    }
     fabricante.productosId.push(prod._id)
     fabricante.save()
     res.status(201).json(({mensaje: `Se ha asociado el fabricante con exito!`}))
