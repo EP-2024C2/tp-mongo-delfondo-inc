@@ -1,13 +1,12 @@
-const { productos } = require('../controllers/productos.controller')
+const mongoose = require('mongoose');
 const middleware = {}
 
-const validateIdProduct = async (req,res,next) => {
-    const id = req.params.id
-    const producto = await productos.findByPk(id)
-    if (!producto)
-       return res.status(404).json({mensaje: `El producto con Id ${id} no existe.`})
-    next()
-}
-middleware.validateIdProduct = validateIdProduct
-
-module.exports = middleware
+    const validateFormat = async (req, res, next) => {
+        const id = req.body.id
+        if(!mongoose.Types.ObjectId.isValid(id)){
+            return res.status(400).json({message: `El id ${id} de fabricante tiene un formato incorrecto`})
+        }
+        next()
+    }
+middleware.validateFormat = validateFormat
+module.exports=middleware

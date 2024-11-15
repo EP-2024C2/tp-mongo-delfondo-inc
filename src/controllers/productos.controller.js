@@ -57,7 +57,7 @@ const productMaker = async (req, res)=>{
     const fabricante = await Fabricante.findById(id)
     if(!fabricante)
         return res.status(404).json({mensaje: `El fabricante con id ${id} no existe`})
-    const existe=fabricante.productosId.find(id=>id._id=idProd)
+    const existe=fabricante.productosId.find(id=>id._id==idProd)
     if(existe){
         return res.status(409).json({mensaje: `El producto con id ${idProd} ya ha sido asociado con anterioridad`})
     }
@@ -69,7 +69,7 @@ controller.productMaker = productMaker
 
 const getAllProductMaker= async (req, res)=>{
     const _id = new mongoose.Types.ObjectId(req.params.id);
-  const productos = await Producto.aggregate([
+    const productos = await Producto.aggregate([
     {
       $match: { _id },
     },
@@ -90,8 +90,9 @@ const getAllProductMaker= async (req, res)=>{
         pathImg:1,
         componentes:1,
         "fabricantes._id": 1,
+        "fabricantes.nombre": 1,
         "fabricantes.direccion": 1,
-        "fabricantes.contacto": 1,
+        "fabricantes.numeroContacto": 1,
         "fabricantes.pathImgPerfil":1
       },
     },
