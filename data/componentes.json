@@ -1,18 +1,82 @@
 [
     {
-        "nombre": "Pantalla OLED 6.5 pulgadas",
-        "descripcion": "Pantalla de alta definición"
+        "nombre": "Procesador Intel Core i9-13900K",
+        "descripcion": "Procesador de alto rendimiento de 24 núcleos, ideal para tareas intensivas y juegos de última generación."
     },
     {
-        "nombre": "Batería 4000mAh",
-        "descripcion": "Batería de larga duración"
+        "nombre": "Placa base ASUS ROG Strix Z690-E",
+        "descripcion": "Placa base de gama alta con soporte para PCIe 5.0, memoria DDR5 y múltiples puertos USB 3.2 para entusiastas del rendimiento."
     },
     {
-        "nombre": "Memoria RAM DDR4",
-        "descripcion": "Memoria Kingston con leds"
+        "nombre": "Memoria RAM Corsair Vengeance DDR4 3200MHz",
+        "descripcion": "Memoria RAM de 16 GB con velocidad de 3200 MHz, ideal para multitarea y videojuegos."
     },
     {
-        "nombre": "Disco M2 NVMe",
-        "descripcion": "Disco solido de alto rendimiento"
+        "nombre": "Tarjeta gráfica NVIDIA GeForce RTX 4090",
+        "descripcion": "Tarjeta gráfica de última generación con 24 GB de memoria GDDR6X, optimizada para juegos en 4K y renderizado 3D."
+    },
+    {
+        "nombre": "Disco duro Seagate Barracuda 2TB",
+        "descripcion": "Disco duro de 2 TB con velocidad de 7200 RPM, adecuado para almacenamiento masivo de archivos y juegos."
+    },
+    {
+        "nombre": "Fuente de poder EVGA SuperNOVA 850W",
+        "descripcion": "Fuente de poder modular de 850W con certificación 80 Plus Gold, ideal para sistemas de alto rendimiento."
+    },
+    {
+        "nombre": "Disco SSD Samsung 970 EVO Plus M.2 NVMe 1TB",
+        "descripcion": "Disco SSD M.2 NVMe de 1 TB con velocidades de lectura y escritura excepcionales, ideal para arranques rápidos y juegos."
+    },
+    {
+        "nombre": "Enfriador Noctua NH-D15",
+        "descripcion": "Enfriador de aire de alto rendimiento con doble ventilador, diseñado para mantener temperaturas bajas en procesadores potentes."
+    },
+    {
+        "nombre": "Pantalla LG OLED 6.5 pulgadas",
+        "descripcion": "Pantalla OLED de 6.5 pulgadas con resolución 4K, ideal para una experiencia visual impresionante con colores vibrantes y negros profundos."
+    },
+    {
+        "nombre": "Caja NZXT H510 Elite",
+        "descripcion": "Caja ATX de alta calidad con panel de vidrio templado y excelente gestión del flujo de aire, perfecta para configuraciones premium."
+    },
+    {
+        "nombre": "Memoria RAM G.Skill Trident Z RGB DDR4 16GB 3600MHz",
+        "descripcion": "Memoria RAM de alto rendimiento con iluminación RGB, ideal para gaming y estaciones de trabajo de alto rendimiento."
+    },
+    {
+        "nombre": "Placa base MSI MAG B550 TOMAHAWK",
+        "descripcion": "Placa base AM4 con chipset B550, soporte para PCIe 4.0 y diseño robusto, perfecta para configuraciones de gama media y alta."
+    },
+    {
+        "nombre": "Tarjeta gráfica AMD Radeon RX 7900 XTX",
+        "descripcion": "Tarjeta gráfica de gama alta con 24 GB de memoria GDDR6, excelente para juegos 4K y aplicaciones de realidad virtual."
+    },
+    {
+        "nombre": "Disco SSD Crucial P5 Plus 1TB M.2 NVMe",
+        "descripcion": "Disco SSD M.2 NVMe de 1TB con velocidades de hasta 6600 MB/s, ideal para acelerar el sistema y reducir los tiempos de carga."
+    },
+    {
+        "nombre": "Fuente de poder Corsair RM750x 750W",
+        "descripcion": "Fuente de poder modular de 750W con certificación 80 Plus Gold, ideal para sistemas de gaming y estaciones de trabajo de alta gama."
+    },
+    {
+        "nombre": "Enfriador líquido Corsair iCUE H150i Elite Capellix",
+        "descripcion": "Sistema de enfriamiento líquido AIO con radiador de 360mm y tecnología RGB, diseñado para mantener la temperatura del procesador bajo control."
+    },
+    {
+        "nombre": "Pantalla ASUS ROG Swift 4K 144Hz",
+        "descripcion": "Pantalla 4K de 27 pulgadas con tasa de refresco de 144Hz, ideal para gamers y creadores de contenido que buscan calidad visual superior."
+    },
+    {
+        "nombre": "Caja Fractal Design Meshify C",
+        "descripcion": "Caja ATX compacta con excelente flujo de aire y diseño minimalista, ideal para construir una PC de alto rendimiento en un espacio reducido."
+    },
+    {
+        "nombre": "Teclado mecánico Logitech G Pro X",
+        "descripcion": "Teclado mecánico compacto con interruptores intercambiables y retroiluminación RGB, perfecto para jugadores profesionales."
+    },
+    {
+        "nombre": "Auriculares Razer Kraken V3",
+        "descripcion": "Auriculares gaming con sonido surround 7.1 y micrófono cardioide, diseñados para ofrecer una experiencia inmersiva durante largas sesiones de juego."
     }
 ]

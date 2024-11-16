@@ -1,20 +1,62 @@
 [
     {
-        "nombre": "Laptop X200",
-        "descripcion": "Una laptop de alto rendimiento",
-        "precio": 1200.99,
-        "pathImg": "/images/productos/laptop-x200.jpg"
+        "nombre": "Laptop ASUS TUF Gaming F15",
+        "descripcion": "Laptop gaming de 15.6 con procesador Intel Core i7 y tarjeta gráfica NVIDIA GeForce GTX 1660 Ti.",
+        "precio": 1299.99,
+        "pathImg": "/images/productos/laptop-asus-tuf-gaming.jpg"
     },
     {
-        "nombre": "Laptoppppp",
-        "descripcion": "Una laptopppppp de alto rendimiento",
-        "precio": 100.97,
-        "pathImg": "/images/productos/laptoppppp.jpg"
+        "nombre": "Monitor Acer Predator X34",
+        "descripcion": "Monitor ultrawide de 34 con resolución 3440x1440 y tasa de refresco de 120Hz, ideal para jugadores y creadores de contenido.",
+        "precio": 799.99,
+        "pathImg": "/images/productos/monitor-acer-predator-x34.jpg"
     },
     {
-        "nombre": "Monitor Dell",
-        "descripcion": "Un monitor viejito pero funciona",
-        "precio": 40,
-        "pathImg": "/images/productos/monitor-del.jpg"
+        "nombre": "Teclado mecánico SteelSeries Apex Pro",
+        "descripcion": "Teclado mecánico con switches ajustables, retroiluminación RGB y estructura de aleación de aluminio.",
+        "precio": 199.99,
+        "pathImg": "/images/productos/teclado-steelseries-apex-pro.jpg"
+    },
+    {
+        "nombre": "Pantalla Samsung Odyssey G7",
+        "descripcion": "Monitor curvo de 27 con resolución QHD y tasa de refresco de 240Hz, diseñado para una experiencia inmersiva de juegos.",
+        "precio": 599.99,
+        "pathImg": "/images/productos/monitor-samsung-odyssey-g7.jpg"
+    },
+    {
+        "nombre": "Laptop HP Omen 15",
+        "descripcion": "Laptop gaming con pantalla de 15.6, procesador Intel Core i9 y tarjeta gráfica NVIDIA GeForce RTX 3070.",
+        "precio": 1799.99,
+        "pathImg": "/images/productos/laptop-hp-omen-15.jpg"
+    },
+    {
+        "nombre": "Monitor Dell UltraSharp 27 U2720Q",
+        "descripcion": "Monitor 4K de 27 con panel IPS y color preciso, ideal para profesionales de diseño gráfico y edición de video.",
+        "precio": 549.99,
+        "pathImg": "/images/productos/monitor-dell-ultrasharp.jpg"
+    },
+    {
+        "nombre": "Laptop Lenovo Legion 5 Pro",
+        "descripcion": "Laptop gaming con pantalla de 16 y resolución WQXGA, procesador AMD Ryzen 7 5800H y tarjeta gráfica NVIDIA GeForce RTX 3060.",
+        "precio": 1499.99,
+        "pathImg": "/images/productos/laptop-lenovo-legion-5.jpg"
+    },
+    {
+        "nombre": "Teclado Logitech G915 TKL",
+        "descripcion": "Teclado mecánico compacto con switches GL Tactile, retroiluminación RGB y diseño de perfil bajo.",
+        "precio": 229.99,
+        "pathImg": "/images/productos/teclado-logitech-g915.jpg"
+    },
+    {
+        "nombre": "Monitor MSI Optix MAG272C",
+        "descripcion": "Monitor curvo de 27 con resolución Full HD y tasa de refresco de 165Hz, ideal para juegos competitivos.",
+        "precio": 349.99,
+        "pathImg": "/images/productos/monitor-msi-optix.jpg"
+    },
+    {
+        "nombre": "Laptop MacBook Pro 16 M1 Pro",
+        "descripcion": "Laptop de alto rendimiento con chip M1 Pro, pantalla Retina de 16, ideal para profesionales del diseño y la edición.",
+        "precio": 2499.99,
+        "pathImg": "/images/productos/laptop-macbook-pro-m1.jpg"
     }
 ]

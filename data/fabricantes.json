@@ -1,20 +1,74 @@
 [
     {
-        "nombre": "TechCorp",
-        "direccion": "1234 Elm St, Ciudad",
-        "numeroContacto": "+123456789",
-        "pathImgPerfil": "/images/fabricantes/techcorp.jpg"
+        "nombre": "Intel",
+        "direccion": "2200 Mission College Blvd, Santa Clara, CA",
+        "numeroContacto": "+1 800-538-3373",
+        "pathImgPerfil": "/images/fabricantes/intel.jpg"
     },
     {
-        "nombre": "Compumundo Hipermegared",
-        "direccion": "1234 Evergreen, Springfield",
-        "numeroContacto": "+987654329",
-        "pathImgPerfil": "/images/fabricantes/ch.jpg"
+        "nombre": "AMD",
+        "direccion": "2485 Augustine Drive, Santa Clara, CA",
+        "numeroContacto": "+1 408-749-4000",
+        "pathImgPerfil": "/images/fabricantes/amd.jpg"
     },
     {
-        "nombre": "Meta",
-        "direccion": "1234 Hackerway, California",
-        "numeroContacto": "+1434387898",
-        "pathImgPerfil": "/images/fabricantes/mega.jpg"
+        "nombre": "NVIDIA",
+        "direccion": "2788 San Tomas Expressway, Santa Clara, CA",
+        "numeroContacto": "+1 408-486-2000",
+        "pathImgPerfil": "/images/fabricantes/nvidia.jpg"
+    },
+    {
+        "nombre": "Corsair",
+        "direccion": "46988 Lakeview Blvd, Fremont, CA",
+        "numeroContacto": "+1 800-205-7657",
+        "pathImgPerfil": "/images/fabricantes/corsair.jpg"
+    },
+    {
+        "nombre": "Seagate",
+        "direccion": "47488 Kato Road, Fremont, CA",
+        "numeroContacto": "+1 800-732-4283",
+        "pathImgPerfil": "/images/fabricantes/seagate.jpg"
+    },
+    {
+        "nombre": "Samsung Electronics",
+        "direccion": "129 Samsung-ro, Yeongtong-gu, Suwon-si, Gyeonggi-do, South Korea",
+        "numeroContacto": "+82-31-200-0114",
+        "pathImgPerfil": "/images/fabricantes/samsung.jpg"
+    },
+    {
+        "nombre": "Microsoft",
+        "direccion": "One Microsoft Way, Redmond, WA",
+        "numeroContacto": "+1 425-882-8080",
+        "pathImgPerfil": "/images/fabricantes/microsoft.jpg"
+    },
+    {
+        "nombre": "Apple",
+        "direccion": "1 Infinite Loop, Cupertino, CA",
+        "numeroContacto": "+1 408-996-1010",
+        "pathImgPerfil": "/images/fabricantes/apple.jpg"
+    },
+    {
+        "nombre": "Logitech",
+        "direccion": "6505 Kaiser Drive, Fremont, CA",
+        "numeroContacto": "+1 800-308-8666",
+        "pathImgPerfil": "/images/fabricantes/logitech.jpg"
+    },
+    {
+        "nombre": "Razer",
+        "direccion": "2013 Torre de la Loma, San Diego, CA",
+        "numeroContacto": "+1 800-597-2049",
+        "pathImgPerfil": "/images/fabricantes/razer.jpg"
+    },
+    {
+        "nombre": "Dell Technologies",
+        "direccion": "1 Dell Way, Round Rock, TX",
+        "numeroContacto": "+1 800-624-9896",
+        "pathImgPerfil": "/images/fabricantes/dell.jpg"
+    },
+    {
+        "nombre": "HP Inc.",
+        "direccion": "1501 Page Mill Road, Palo Alto, CA",
+        "numeroContacto": "+1 800-474-6836",
+        "pathImgPerfil": "/images/fabricantes/hp.jpg"
     }
 ]
