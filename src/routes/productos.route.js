@@ -5,6 +5,7 @@ const { genericMiddleware,productosMiddleware } = require('../middlewares/index'
 const { Producto } = require('../models')
 const schemaValidator = require('../middlewares/schemaValidator')
 const productosSchema= require('../schemas/productos.schema')
+const componenteSchema= require('../schemas/componentes.schema')
 
 route.get('/productos',productosController.getAllProducts)
 route.get('/productos/:id',genericMiddleware.validateId(Producto),productosController.getProductById)
@@ -16,7 +17,7 @@ route.delete('/productos/:id',genericMiddleware.validateId(Producto),productosCo
 // Tablas Intermedias
 route.post('/productos/:id/fabricantes',genericMiddleware.validateId(Producto),productosMiddleware.validateFormat,productosController.productMaker)
 route.get('/productos/:id/fabricantes',genericMiddleware.validateId(Producto),productosController.getAllProductMaker)
-route.post('/productos/:id/componentes',genericMiddleware.validateId(Producto),productosController.productParts)
+route.post('/productos/:id/componentes',genericMiddleware.validateId(Producto),schemaValidator(componenteSchema),productosController.productParts)
 route.get('/productos/:id/componentes',genericMiddleware.validateId(Producto),productosController.getAllProductsParts)
 
 module.exports = route

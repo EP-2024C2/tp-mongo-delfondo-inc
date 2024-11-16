@@ -101,26 +101,29 @@ const getAllProductMaker= async (req, res)=>{
 }
 controller.getAllProductMaker = getAllProductMaker
 //Hasta deleteById funciona con mongo, faltan los que siguen.
+
+// Este agrega un componente
 const productParts = async (req, res)=>{
-    const idProd = req.params.id // id producto
-    const { id } = req.body // id del componente
-    const prod=await Producto.findByPk(idProd)
-    const componente=await Componente.findByPk(id)
-    await prod.addComponente(componente)
-    res.status(201).json(({mensaje: `Se ha asociado el componente con exito!`}))
+  const idProd = req.params.id // id producto
+  const promesa = req.body
+  try{
+    const producto=await Producto.findByIdAndUpdate(idProd,
+      {$push: {componentes: promesa}},
+      {new:true}
+    );
+    res.status(201).json((producto.componentes[producto.componentes.length -1]))
+  } catch(error){
+    res.status(500).json({error: 'No pudo crearse el componente'})
+  }
 } 
 controller.productParts = productParts
 
+// Este deberia estar
 const getAllProductsParts= async (req, res)=>{
-    const id = req.params.id
-    const prod = await Producto.findOne( {
-        where: {id},
-        include: {
-            model: Componente,
-            through: {attributes: []}
-        }
-    })
-    res.status(200).json(prod)
+  const id = req.params.id
+  const producto = await Producto.findById(id)
+  const parts = await producto.componentes
+  res.status(200).json(parts)
 }
 controller.getAllProductsParts = getAllProductsParts
 
