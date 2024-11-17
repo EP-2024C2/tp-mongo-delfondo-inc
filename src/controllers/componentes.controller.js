@@ -86,14 +86,9 @@ const updatePart = async (req, res)=>{
 controller.updatePart = updatePart
 
 const deleteById = async (req,res)=>{
-    const idBorrado = req.params.id
-    try{const row = await Componente.destroy({
-        where: {id:idBorrado}
-    })
-    res.status(200).json({mensaje: `fila borrada ${row}`})
-    }catch{
-        res.status(500).json({message:'Error de borrado!'})
-        }
+    const id = req.params.id
+    await Producto.updateOne({ 'componentes._id': id }, { $pull: { componentes: { _id: id } } } );
+    return res.status(200).json(`El componente con id ${id} fue eliminado correctamente!`)
 }
 controller.deleteById = deleteById
 

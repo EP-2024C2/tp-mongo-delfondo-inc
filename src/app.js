@@ -3,6 +3,7 @@ console.log("Trabajo Practico de Estrategias de Persistencia.....")
 const express = require('express')
 const morgan = require("morgan");
 const routes = require('./routes')
+require('dotenv').config();
 const {genericMiddleware} = require('./middlewares')
 const dbCon = require("./db/mongo.db").connectToDatabase;
 const app = express()

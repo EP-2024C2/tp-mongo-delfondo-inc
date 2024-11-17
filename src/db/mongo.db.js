@@ -1,7 +1,6 @@
 const mongoose = require("mongoose");
 const MONGO_URL =
-  process.env.MONGO_URL ??
-  "mongodb://admin:admin1234@localhost:27017/delFondoIncDB?authSource=admin";
+  process.env.MONGO_URL ?? "mongodb://admin:admin1234@localhost:27017/delFondoIncDB?authSource=admin";
 
 async function connectToDatabase() {
   try {
