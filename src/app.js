@@ -17,6 +17,7 @@ app.use(genericMiddleware.requestTime)
 app.use(routes.productosRoute)
 app.use(routes.fabricantesRoute)
 app.use(routes.componentesRoute)
+
 app.listen(PORT, async ()=>{
     await dbCon()
     console.log(`\u{2B50} Aplicacion iniciada en el puerto ${PORT}`)

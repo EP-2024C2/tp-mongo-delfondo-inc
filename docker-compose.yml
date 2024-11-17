@@ -22,4 +22,15 @@ services:
     depends_on:
       - mongodb
 
-  
+  app:
+    image: app:${APP_VERSION}
+    build: .
+    ports:
+      -3001:3001
+    environment:
+      PORT: ${PORT}
+      MONGO_USER: ${MONGO_USER}
+      MONGO_PASSWORD: ${MONGO_PASSWORD}
+      MONGO_URL: ${MONGO_URL}
+    depends_on:
+      -mongodb  

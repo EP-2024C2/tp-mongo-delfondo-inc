@@ -58,8 +58,6 @@ const productMaker = async (req, res)=>{
     const { id } = req.body
     const prod = await Producto.findById(idProd)
     const fabricante = await Fabricante.findById(id)
-    if(!fabricante)
-        return res.status(404).json({mensaje: `El fabricante con id ${id} no existe`})
     const existe=fabricante.productosId.find(id=>id._id==idProd)
     if(existe){
         return res.status(409).json({mensaje: `El producto con id ${idProd} ya ha sido asociado con anterioridad`})
@@ -87,11 +85,6 @@ const getAllProductMaker= async (req, res)=>{
     {
       $project: {
         _id: 0,
-        nombre: 1,
-        descripcion: 1,
-        precio: 1,
-        pathImg:1,
-        componentes:1,
         "fabricantes._id": 1,
         "fabricantes.nombre": 1,
         "fabricantes.direccion": 1,
@@ -103,7 +96,7 @@ const getAllProductMaker= async (req, res)=>{
   res.status(200).json(productos);
 }
 controller.getAllProductMaker = getAllProductMaker
-//Hasta deleteById funciona con mongo, faltan los que siguen.
+
 
 // Este agrega un componente
 const productParts = async (req, res)=>{
@@ -122,7 +115,6 @@ const productParts = async (req, res)=>{
 } 
 controller.productParts = productParts
 
-// Este deberia estar
 const getAllProductsParts= async (req, res)=>{
   const id = req.params.id
   const producto = await Producto.findById(id)

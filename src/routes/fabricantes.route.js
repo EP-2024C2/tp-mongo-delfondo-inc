@@ -7,14 +7,13 @@ const schemaValidator = require('../middlewares/schemaValidator')
 const fabricantesSchema= require('../schemas/fabricante.schema')
 
 route.get('/fabricantes',fabricantesController.getAllMakers)
-route.get('/fabricantes/:id',genericMiddleware.validateId(Fabricante),fabricantesController.getMakerById)
+route.get('/fabricantes/:id',genericMiddleware.validateFormatId,genericMiddleware.validateId(Fabricante),fabricantesController.getMakerById)
 
 route.post('/fabricantes',schemaValidator(fabricantesSchema),fabricantesController.createMaker)
-route.put('/fabricantes/:id',genericMiddleware.validateId(Fabricante),fabricantesController.updateMaker)
-route.delete('/fabricantes/:id',genericMiddleware.validateId(Fabricante),fabricantesController.deleteById)
+route.put('/fabricantes/:id',genericMiddleware.validateFormatId,genericMiddleware.validateId(Fabricante),fabricantesController.updateMaker)
+route.delete('/fabricantes/:id',genericMiddleware.validateFormatId,genericMiddleware.validateId(Fabricante),fabricanteMiddleware.validateAsociation,fabricantesController.deleteById)
 
 // Tabla Intermedia
-route.get('/fabricantes/:id/productos',genericMiddleware.validateId(Fabricante),fabricantesController.getAllProductsMade)
+route.get('/fabricantes/:id/productos',genericMiddleware.validateFormatId,genericMiddleware.validateId(Fabricante),fabricantesController.getAllProductsMade)
 
 module.exports = route
-/* fabricanteMiddleware.validateAsociation */

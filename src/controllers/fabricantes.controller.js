@@ -41,7 +41,7 @@ controller.deleteById = deleteById
 
 const getAllProductsMade = async (req,res)=>{
     const id = req.params.id
-    const fabricante = await Fabricante.findById(id).populate('productosId')
+    const fabricante = await Fabricante.findById(id).select('-nombre -direccion -numeroContacto -pathImgPerfil').populate('productosId')
     res.status(200).json(fabricante)
 }
 controller.getAllProductsMade = getAllProductsMade

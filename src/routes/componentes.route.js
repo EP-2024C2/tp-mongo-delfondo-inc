@@ -1,19 +1,15 @@
 const { Router } = require('express')
 const route = Router()
 const { componentesController } = require('../controllers/index')
-const { genericMiddleware } = require('../middlewares/index')
-const { Componente } = require('../models')
-const schemaValidator = require('../middlewares/schemaValidator')
-const componentesSchema= require('../schemas/componentes.schema')
+const { genericMiddleware,componentesMiddleware } = require('../middlewares/index')
 
 route.get('/componentes',componentesController.getAllParts)
-route.get('/componentes/:id',componentesController.getPartById)
+route.get('/componentes/:id',genericMiddleware.validateFormatId,componentesMiddleware.validatePartId,componentesController.getPartById)
 
-route.post('/componentes',schemaValidator(componentesSchema), componentesController.createPart)
-route.put('/componentes/:id', componentesController.updatePart)
-route.delete('/componentes/:id',componentesController.deleteById)
+route.put('/componentes/:id',genericMiddleware.validateFormatId,componentesMiddleware.validatePartId, componentesController.updatePart)
+route.delete('/componentes/:id',genericMiddleware.validateFormatId,componentesMiddleware.validatePartId,componentesController.deleteById)
 
 // Tabla Intermedia
-route.get('/componentes/:id/productos',genericMiddleware.validateId(Componente),componentesController.getAllProductsMadeWithPart)
+route.get('/componentes/:id/productos',genericMiddleware.validateFormatId,componentesMiddleware.validatePartId,componentesController.getAllProductsMadeWithPart)
 
 module.exports = route
