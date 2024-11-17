@@ -37,41 +37,14 @@ const updateProducto = async (req,res)=>{
 }
 controller.updateProducto = updateProducto
 
-const deleteById = async (req,res)=>{
-  const productos = await Producto.aggregate([
-      {
-        $match: { _id: new mongoose.Types.ObjectId(req.params.id)},
-      },
-      {
-        $lookup: {
-          from: "fabricantes",
-          localField: "_id",
-          foreignField: "productosId",
-          as: "fabricantes",
-        },
-      },
-      {
-        $project: {
-          _id: 0,
-          nombre: 1,
-          descripcion: 1,
-          precio: 1,
-          pathImg:1,
-          componentes:1,
-          "fabricantes._id": 1,
-          "fabricantes.productosId": 1
-        },
-      },
-  ])
+const deleteById = async (req, res) => {
   try{
-      await Producto.findOneAndDelete({_id:req.params.id})
-      for (const fabricante of productos[0].fabricantes) {
-          const fab = await Fabricante.findById(fabricante._id.toString())
-          const index = fab.productosId.findIndex(prodId => prodId.toString() === req.params.id)
-          fab.productosId.splice(index, 1)
-          fab.save()
-      }
-      res.status(200).json({mensaje: `El producto con id ${req.params.id} ha sido eliminado exitosamente.`})
+    await Producto.findOneAndDelete({_id:req.params.id})
+    await Fabricante.updateMany(
+      { productosId: req.params.id },
+      { $pull: { productosId: req.params.id } }
+    )
+    res.status(200).json({mensaje: `El producto con id ${req.params.id} ha sido eliminado exitosamente.`})
   } catch(error) {
       res.status(500).json({message:'Error de borrado!'})
   }
