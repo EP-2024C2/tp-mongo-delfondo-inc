@@ -38,13 +38,43 @@ const updateProducto = async (req,res)=>{
 controller.updateProducto = updateProducto
 
 const deleteById = async (req,res)=>{
-    const idBorrado = req.params.id
-    try{
-        await Producto.findOneAndDelete({_id:idBorrado})
-        res.status(200).json({mensaje: `El producto con id ${idBorrado} ha sido eliminado exitosamente.`})
-    } catch(error) {
-        res.status(500).json({message:'Error de borrado!'})
-    }
+  const productos = await Producto.aggregate([
+      {
+        $match: { _id: new mongoose.Types.ObjectId(req.params.id)},
+      },
+      {
+        $lookup: {
+          from: "fabricantes",
+          localField: "_id",
+          foreignField: "productosId",
+          as: "fabricantes",
+        },
+      },
+      {
+        $project: {
+          _id: 0,
+          nombre: 1,
+          descripcion: 1,
+          precio: 1,
+          pathImg:1,
+          componentes:1,
+          "fabricantes._id": 1,
+          "fabricantes.productosId": 1
+        },
+      },
+  ])
+  try{
+      await Producto.findOneAndDelete({_id:req.params.id})
+      for (const fabricante of productos[0].fabricantes) {
+          const fab = await Fabricante.findById(fabricante._id.toString())
+          const index = fab.productosId.findIndex(prodId => prodId.toString() === req.params.id)
+          fab.productosId.splice(index, 1)
+          fab.save()
+      }
+      res.status(200).json({mensaje: `El producto con id ${req.params.id} ha sido eliminado exitosamente.`})
+  } catch(error) {
+      res.status(500).json({message:'Error de borrado!'})
+  }
 }
 controller.deleteById = deleteById
 
@@ -106,9 +136,10 @@ controller.getAllProductMaker = getAllProductMaker
 const productParts = async (req, res)=>{
   const idProd = req.params.id // id producto
   const promesa = req.body
+  const componentes = typeof promesa === 'object' ? {componentes: promesa} : {componentes: {$each:promesa}}
   try{
     const producto=await Producto.findByIdAndUpdate(idProd,
-      {$push: {componentes: promesa}},
+      {$push: componentes},
       {new:true}
     );
     res.status(201).json((producto.componentes[producto.componentes.length -1]))

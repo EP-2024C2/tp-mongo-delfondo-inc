@@ -51,6 +51,7 @@ productoSchema.set("toJSON", {
     transform: (_, ret) => {
       delete ret.__v;
       delete ret._id;
+      //delete ret.componentes
       if(ret.componentes){
         ret.componentes = ret.componentes.map(c => {
             const {_id, ...componente} = c

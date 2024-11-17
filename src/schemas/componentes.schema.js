@@ -17,4 +17,10 @@ const componenteSchema = Joi.object().keys({
     'object.unknown': 'El atributo {#label} no está permitido.'
 });
 
-module.exports = componenteSchema;
+const componentesSchema = Joi.alternatives().try(
+    componenteSchema,
+    Joi.array().items(componenteSchema)
+  );
+
+module.exports = componentesSchema;
+
