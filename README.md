@@ -10,7 +10,7 @@ Las relaciones en MongoDB se pueden modelar en 2 enfoques diferentes: la relaci�
 
 Relación que implica almacenar documentos secundarios incrustados dentro de un documento principal.
 
-Tomamos la decision de adoptar este tipo de relacion entre Producto y Componente, ya que estan fuertemente vinculados ( asumiendo que los datos que necesito de un componente son seriales) y en nuestro modelo no se somete a cambios frecuentes. Dentro de este tipo de relacion Mongoose nos ofrece 2 enfoques: Subdocuments y Nested, basicamente es tener los subdocumentos como esquemas incrustados o declarados explicitamente como un array. De estos optamos por el segundo: anidado.
+Tomamos la decision de adoptar este tipo de relacion entre Producto y Componente, ya que estan fuertemente vinculados y en nuestro modelo no se someten a cambios frecuentes. Dentro de este tipo de relacion Mongoose nos ofrece 2 enfoques: Subdocuments y Nested, basicamente es tener los subdocumentos como esquemas incrustados o declarados explicitamente como un array. De estos optamos por el segundo: anidado.
 
 ![Incrustada](./img/Incrustada.png)
 
@@ -68,19 +68,19 @@ docker run -p 4000:3000 -e PORT=3000 app:1.0.0
 | POST   | /productos                 | 201, 400      | Crear un producto                                     |
 | PUT    | /productos/:id             | 200, 404      | Modificar los datos de un producto en particular      |
 | DELETE | /productos/:id             | 200, 404, 500 | Borrar un producto en particular                      |
-
+| ------ | -------------------------- | ------------- | ----------------------------------------------------- |
 | GET    | /fabricantes               | 200           | Obtener todos los fabricantes                         |
 | GET    | /fabricantes/:id           | 200, 404      | Obtener un fabricante en particular                   |
 | POST   | /fabricantes               | 201, 400      | Crear un fabricante                                   |
 | PUT    | /fabricantes/:id           | 200, 404      | Modificar los datos de un fabricante en particular    |
-| DELETE | /fabricantes/:id           | 200, 404, 500 | Borrar un fabricante en particular           		  |
-
+| DELETE | /fabricantes/:id           | 200, 404, 500 | Borrar un fabricante en particular           		      |
+| ------ | -------------------------- | ------------- | ----------------------------------------------------- |
 | GET    | /componentes               | 200           | Obtener todos los componentes                         |
 | GET    | /componentes/:id           | 200, 404      | Obtener un componente en particular                   |
-| POST   | /productos/:id/componentes | 201, 404, 400 | Crear Componente o Varios[{},{}] dentro de un Producto|
+| POST   | /productos/:id/componentes | 201, 404, 400 | Crear Componente o Varios [{componente1},{componente2}] dentro de un Producto|
 | PUT    | /componentes/:id           | 200, 404      | Modificar los datos de un componente en particular    |
 | DELETE | /componentes/:id           | 200, 404, 500 | Borrar un componente en particular                    |
-
+| ------ | -------------------------- | ------------- | ----------------------------------------------------- |
 | POST   | /productos/:id/fabricantes | 201, 404, 400 | Crear la asociación de producto con 1 o N fabricantes, necesita en el body el id del fabricante. |
 | GET    | /productos/:id/fabricantes | 200, 404      | Obtener todos los fabricantes de un producto          |
 | GET    | /productos/:id/componentes | 200, 404      | Obtener todos los componentes de un producto          |
