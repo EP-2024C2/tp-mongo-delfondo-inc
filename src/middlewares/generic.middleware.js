@@ -6,7 +6,7 @@ const validateId = (model) => {
         const id = req.params.id
         await model.findById(id).then(result => {
             if(!result)
-                return res.status(400).json({message: `El ${model.modelName} con id ${id} no existe`})
+                return res.status(404).json({message: `El ${model.modelName} con id ${id} no existe`})
             next()
         })
     }

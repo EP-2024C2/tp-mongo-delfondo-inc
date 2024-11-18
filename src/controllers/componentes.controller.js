@@ -41,12 +41,18 @@ controller.updatePart = updatePart
 entendiendo de que este endPoint no deberia existir ya que no se deberian borrar componentes asociados a un producto.*/
 const deleteById = async (req,res)=>{
     const id = req.params.id
-    const prod = await Producto.findOne({'componentes._id': id})
-    await prod.componentes.find(c=> c.id===id).deleteOne()
-    await prod.save()
-    return res.status(200).json(`El componente con id ${id} fue eliminado correctamente!`)
+    try{
+        const prod = await Producto.findOne({'componentes._id': id})
+        await prod.componentes.find(c=> c.id===id).deleteOne()
+        await prod.save()
+        res.status(200).json(`El componente con id ${id} fue eliminado correctamente!`)
+    } catch(error) {
+        res.status(500).json({message:'Error de borrado!'})
+    }
+
 }
 controller.deleteById = deleteById
+
 const getAllProductsMadeWithPart = async (req,res)=>{
     const id = req.params.id
     const componente = await Producto.findOne({'componentes._id': id}).select('-componentes')
