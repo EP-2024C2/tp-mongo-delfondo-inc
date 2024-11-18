@@ -6,7 +6,13 @@ const mongoose = require("../db/mongo.db").mongoose;
 estan vinculados a los productos por lo que esta busqueda seria obsoleta*/
 const getAllParts = async (req, res)=>{
     const componentes = await Producto.find({},{"componentes": 1})
-    res.status(200).json(componentes)
+    let comp = []
+    componentes.forEach(e => {
+        if(e.componentes.length > 0){
+            comp.push({componentes: e.componentes, productoAsociado: e.id})
+        }
+    })
+    res.status(200).json(comp)
 } 
   
 controller.getAllParts = getAllParts
