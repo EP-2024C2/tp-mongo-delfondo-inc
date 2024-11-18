@@ -44,15 +44,26 @@ El motor de base de datos utilizado es **Mongo DB**. Utiliza el archivo docker c
 
 ### Correr la App en desarrollo 
 
+Instala las dependencias necesarias:
+```bash
 npm i
+```
 
+Inicializar entorno de desarrollo:
+```bash
 npm run dev
+```
 
 ### Dockerizar la app
 
+1. Crea una imagen de la aplicación:
+```bash
 docker-compose up -d
+```
 
-Si se desea cambiar el PORT o algun otro valor se puede modificar el archivo desde el dot.env
+2. Se podrá acceder a la aplicación desde la siguiente URL: [http://localhost:3001](http://localhost:3001).
+
+Si se desea cambiar el PORT o algun otro valor se puede modificar el archivo .env
 
 ## API
 
