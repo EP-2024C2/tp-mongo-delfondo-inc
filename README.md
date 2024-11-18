@@ -45,17 +45,14 @@ El motor de base de datos utilizado es **Mongo DB**. Utiliza el archivo docker c
 ### Correr la App en desarrollo 
 
 npm i
+
 npm run dev
 
 ### Dockerizar la app
 
 docker-compose up -d
 
-Crear Imagen con Version: docker build -t app:1.0.0 .
-
-### Ejecutarlo en puerto modificado por variable de entorno
-
-docker run -p 4000:3000 -e PORT=3000 app:1.0.0
+Si se desea cambiar el PORT o algun otro valor se puede modificar el archivo desde el dot.env
 
 ## API
 
